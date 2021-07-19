@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IncMediaBackgroundService", "IncMediaBackgroundService.csproj", "{DDA128A5-900E-4A31-9464-5C391BF4AACB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDA128A5-900E-4A31-9464-5C391BF4AACB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDA128A5-900E-4A31-9464-5C391BF4AACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDA128A5-900E-4A31-9464-5C391BF4AACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDA128A5-900E-4A31-9464-5C391BF4AACB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BD5C7365-F173-4A3B-920F-97C65F4BFB7B}
+	EndGlobalSection
+EndGlobal
