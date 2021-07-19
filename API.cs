@@ -10,6 +10,16 @@ using System.Threading.Tasks;
 namespace IncMediaBackgroundService
 {
     [Serializable]
+    public class MpvRequest
+    {
+        public string[] command { get; }
+        public MpvRequest(string[] args)
+        {
+            this.command = args;
+        }
+    }
+
+    [Serializable]
     public class Result
     {
         public bool Success { get; set; }
@@ -28,9 +38,13 @@ namespace IncMediaBackgroundService
         private IMpvMessenger MpvMessenger { get; set; }
 
         [JsonRpcMethod]
-        public Result SendRequest(string msg)
+        public Result SendRequest(string args)
         {
-            return MpvMessenger.Send(msg);
+            if (MpvMessenger == null)
+                return new Result(false, null, "No mpv process started.");
+
+            var json = new MpvRequest(args.Split(" ")).Serialize();
+            return MpvMessenger.Send(json);
         }
 
         [JsonRpcMethod]

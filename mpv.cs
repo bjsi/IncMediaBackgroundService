@@ -19,8 +19,9 @@ namespace IncMediaBackgroundService
                 $"--input-ipc-server={ipcSocket}",
                 $"--script-opts=im-start=yes,im-queue={queue}",
             };
-
-            return Process.Start(mpvPath, args);
+            var p = ProcessEx.CreateBackgroundProcess(mpvPath, string.Join(" ", args));
+            p.Start();
+            return p;
         }
     }
 }

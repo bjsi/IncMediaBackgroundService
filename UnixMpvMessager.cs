@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,12 +26,16 @@ namespace IncMediaBackgroundService
                 return new Result(false, null, "No mpv process running.");
             }
 
+            var tmp = "/tmp/send_to_mpv.json";
+            File.WriteAllText(tmp, message + "\n");
+
             var (status, stdout, _) = new Process()
             {
                 StartInfo = new ProcessStartInfo
                 {
-                    FileName = "sh -c",
-                    Arguments = $"echo {message} | socat - {Socket}",
+                    FileName = "/bin/sh",
+                    Arguments = $"-c \"cat {tmp} | socat - {Socket}\"",
+                    UseShellExecute = false,
                 }
             }.ExecuteBlockingWithOutputs();
 

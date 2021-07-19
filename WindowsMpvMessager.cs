@@ -10,7 +10,7 @@ namespace IncMediaBackgroundService
         private string PipePath { get; }
         private Process MpvProc { get; }
 
-        public WindowsMpvMessager(Process mpvProc, string pipePath) 
+        public WindowsMpvMessager(Process mpvProc, string pipePath)
         {
             PipePath = pipePath;
             MpvProc = mpvProc;

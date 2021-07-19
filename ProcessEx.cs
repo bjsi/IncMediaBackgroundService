@@ -24,7 +24,7 @@ namespace IncMediaBackgroundService
           FileName        = binName,
           Arguments       = args,
           UseShellExecute = false,
-          CreateNoWindow  = true,
+          // CreateNoWindow  = true,
         }
             };
 
