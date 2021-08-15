@@ -1,14 +1,14 @@
 ﻿using System.Diagnostics;
 using System.Text;
 
-namespace IncMediaBackgroundService
+namespace IncMediaBackgroundService.Helpers
 {
     /// <summary>Extension methods for <see cref="Process" /></summary>
     public static class ProcessEx
     {
         #region Methods
 
-        /// <summary>Create a process and runs it in the background (no window, no shell execute)</summary>
+        /// <summary>Create a process and runs it in the background</summary>
         /// <param name="binName">The executable name</param>
         /// <param name="args">Optional parameters</param>
         /// <param name="workingDirectory">Optional working directory</param>

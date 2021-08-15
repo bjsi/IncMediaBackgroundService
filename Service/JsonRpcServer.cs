@@ -1,8 +1,6 @@
 ﻿using AustinHarris.JsonRpc;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -14,12 +12,11 @@ namespace IncMediaBackgroundService
     {
         public bool HasExited { get; set; }
         private TcpListener Server { get; set; }
-        private API Service { get; set; } = new API();
-        private const int Port = 9890;
+        private BackgroundJsonRpcService Service { get; set; } = new BackgroundJsonRpcService();
 
         public async Task StartAsync()
         {
-            Server = new TcpListener(IPAddress.Parse("127.0.0.1"), Port);
+            Server = new TcpListener(IPAddress.Parse(Config.Host), Config.Port);
             Server.Start();
             while (!HasExited)
             {
